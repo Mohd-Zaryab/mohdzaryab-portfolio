@@ -76,9 +76,42 @@ const Hero = () => {
                     <div className="absolute inset-0 bg-neon-teal/5 blur-[120px] rounded-full" />
                     <h1
                         style={{ color: 'var(--text-hero)' }}
-                        className="text-7xl md:text-9xl font-black relative z-10 leading-[0.9] tracking-tighter hover:text-neon-teal transition-colors duration-500 cursor-default"
+                        className="text-7xl md:text-9xl font-black relative z-10 leading-[0.9] tracking-tighter cursor-default"
                     >
-                        MOHAMMAD<br />ZARYAB
+                        <div className="flex flex-nowrap justify-center">
+                            {"MOHAMMAD".split("").map((char, index) => (
+                                <motion.span
+                                    key={`m-${index}`}
+                                    className="inline-block"
+                                    whileHover={{
+                                        color: '#2DD4BF',
+                                        textShadow: '0 0 8px #2DD4BF, 0 0 20px #2DD4BF',
+                                        scale: 1.2,
+                                        y: -5
+                                    }}
+                                    transition={{ duration: 0.1 }}
+                                >
+                                    {char}
+                                </motion.span>
+                            ))}
+                        </div>
+                        <div className="flex flex-nowrap justify-center mt-2 md:mt-0">
+                            {"ZARYAB".split("").map((char, index) => (
+                                <motion.span
+                                    key={`z-${index}`}
+                                    className="inline-block"
+                                    whileHover={{
+                                        color: '#2DD4BF',
+                                        textShadow: '0 0 8px #2DD4BF, 0 0 20px #2DD4BF',
+                                        scale: 1.2,
+                                        y: -5
+                                    }}
+                                    transition={{ duration: 0.1 }}
+                                >
+                                    {char}
+                                </motion.span>
+                            ))}
+                        </div>
                     </h1>
 
                     <div className="flex flex-wrap justify-center gap-4 mt-8 relative z-10">
@@ -115,6 +148,15 @@ const Hero = () => {
                         whileHover={{ x: '101%' }}
                         transition={{ duration: 0.6, ease: "circIn" }}
                     />
+
+                    {/* Tooltip */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        whileHover={{ opacity: 1, y: 0 }}
+                        className="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1 bg-accent text-background text-[10px] font-bold uppercase rounded pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                        View Strategic Resume
+                    </motion.div>
                 </motion.a>
             </motion.div>
 

@@ -26,22 +26,26 @@ body {
   background-color: var(--background);
   color: var(--text-primary);
   transition: background-color 0.5s ease, color 0.5s ease;
-  @apply overflow-x-hidden m-0 p-0 selection:bg-neon-teal selection:text-background;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
   cursor: none;
 }
 
-/* Grain Overlay */
+::selection {
+  background-color: rgba(45, 212, 191, 0.3);
+  color: white;
+}
+
+/* Grain Overlay fallback if component fails */
 .grain-overlay {
   position: fixed;
-  top: -150%;
-  left: -50%;
-  width: 300%;
-  height: 300%;
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  inset: 0;
+  z-index: 50;
   opacity: 0.05;
   pointer-events: none;
-  z-index: 9999;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
 }
 
 /* Custom Cursor */
@@ -66,21 +70,15 @@ body {
 
 /* Glassmorphism */
 .glass {
-  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .glass-teal {
-  @apply bg-neon-teal/5 backdrop-blur-md border border-neon-teal/20;
-}
-
-/* Parallax Tilt */
-.tilt-card {
-  transform-style: preserve-3d;
-  perspective: 1000px;
-}
-
-.tilt-inner {
-  transform: translateZ(20px);
+  background: rgba(45, 212, 191, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(45, 212, 191, 0.1);
 }
 
 @layer base {

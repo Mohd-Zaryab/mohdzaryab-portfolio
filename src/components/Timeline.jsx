@@ -13,13 +13,18 @@ const Timeline = () => {
     const milestones = [
         {
             role: "SME @ EXL",
-            period: "Present",
-            details: "Managing 21 members, primary client contact, KPI monitoring."
+            period: "2021 - Present",
+            details: "Managing 21 members, primary client contact, KPI monitoring. Leading operations for major U.S. P&C Insurance clients."
+        },
+        {
+            role: "MCA (AI & ML)",
+            period: "2024 - 2026",
+            details: "Pursuing Master of Computer Applications with specialization in AI and Machine Learning at Amity University Online."
         },
         {
             role: "Senior Executive",
             period: "2022 - 2023",
-            details: "Team of 12, Quality Compliance Lead."
+            details: "Team of 12, Quality Compliance Lead. SLA/KPI monitoring and team orchestration."
         },
         {
             role: "Executive",

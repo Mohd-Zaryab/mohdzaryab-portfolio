@@ -12,7 +12,6 @@ const Contact = lazy(() => import('./components/Contact'));
 const Footer = lazy(() => import('./components/Footer'));
 
 import ThemeToggle from './components/ThemeToggle';
-import AmbientPlayer from './components/AmbientPlayer';
 
 const LoadingFallback = () => (
   <div className="fixed inset-0 bg-background flex flex-col items-center justify-center z-[9999]">
@@ -40,7 +39,6 @@ function App() {
       <CustomCursor />
       <Background />
       <ThemeToggle />
-      <AmbientPlayer />
 
       <Suspense fallback={<LoadingFallback />}>
         <Hero />
